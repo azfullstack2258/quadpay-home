@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 import { Button, Icon } from '../../components/_shared';
-import quadpayImg from '../../assets/images/quadpay.png';
 import { ITEMS } from './constants';
 
 const Banner = styled.div.attrs({

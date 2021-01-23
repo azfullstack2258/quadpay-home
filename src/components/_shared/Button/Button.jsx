@@ -14,7 +14,7 @@ const Btn = styled.button`
 const Button = ({ className: cls, caption, type, disabled, icon, onClick }) => {
   const className = useMemo(
     () => `rounded px-6 py-3 flex items-center bg-white text-blue font-bold ${disabled ? 'btn-disabled' : `btn-${type}`} ${cls}`,
-    [type, disabled]
+    [type, disabled, cls]
   );
   const Icon = icon !== '' ? Icons[icon] : null;
 
