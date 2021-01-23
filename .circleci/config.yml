@@ -1,0 +1,50 @@
+version: 2.1
+orbs:
+  aws-cli: circleci/aws-cli@1.2.1
+jobs:
+  test:
+    docker:
+      - image: circleci/node:10.20.0
+    working_directory: ~/project
+    steps:
+      - checkout
+      - run:
+          name: Fetch dependencies
+          command: yarn install --no-progress --non-interactive --silent --pure-lockfile
+      - run:
+          name: Run test suite
+          command: yarn test_ci
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
+  build_and_deploy:
+    docker:
+      - image: circleci/node:10.20.0
+    working_directory: ~/project
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Build application to dist folder
+          command: yarn build
+      - aws-cli/setup:
+          profile-name: relational-id
+      - run:
+          name: Sync dist folder to S3
+          command: yarn deploy
+workflows:
+  version: 2
+  test_build_deploy:
+    jobs:
+    - test:
+        filters:
+          branches:
+            ignore:
+              - /.*-skip-test[s]$/
+    - build_and_deploy:
+        requires:
+          - test
+        filters:
+          branches:
+            only: master

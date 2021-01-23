@@ -1,0 +1,18 @@
+import React from 'react';
+
+const TempleIcon = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 14 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7 0.429688L6.75391 0.552734L0.8125 3.4707V4.4375H13.1875V3.4707L7.24609 0.552734L7 0.429688ZM7 1.69531L10.3047 3.3125H3.69531L7 1.69531ZM1.9375 5V10.625H1.375V11.75H12.625V10.625H12.0625V5H10.9375V10.625H9.8125V5H8.6875V10.625H7.5625V5H6.4375V10.625H5.3125V5H4.1875V10.625H3.0625V5H1.9375ZM0.25 12.3125V13.4375H13.75V12.3125H0.25Z"
+      fill="#374151"
+    />
+  </svg>
+);
+
+export default TempleIcon;

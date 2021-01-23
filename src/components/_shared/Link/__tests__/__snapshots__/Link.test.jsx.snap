@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Link /> should render a prop 1`] = `
+<div>
+  <a
+    class="sc-AxjAm sc-AxirZ dqVvwz text-primary underline hover:text-secondary hover:cursor-pointer text-sm"
+    href="/"
+  >
+    Link
+  </a>
+</div>
+`;

@@ -1,0 +1,29 @@
+<!--- Button.story.mdx -->
+
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Button } from './Button';
+
+<Meta title="MDX/Button" component={Button} />
+
+# Button
+Button component
+
+export const Template = (args) => <Button {...args} />
+
+<Canvas>
+  <Story name="Primary" args={{ type: 'primary', caption: 'Primary' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Secondary" args={{ type: 'secondary' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Neutral" args={{ type: 'neutral', caption: 'Neutral' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Flat" args={{ type: 'flat', caption: 'Flat' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Disabled" args={{ disabled: true, caption: 'Disabled' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
