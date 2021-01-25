@@ -52,6 +52,16 @@ const Banner = styled.div.attrs({
       }
     }
   }
+
+  @media only screen and (max-width: 639px) {
+    padding: 36px 48px;
+    background-image: none;
+
+    .title {
+      font-size: 48px;
+      line-height: 48px;
+    }
+  }
 `;
 const Content = styled.div.attrs({
   className: 'w-full z-10',
@@ -81,6 +91,14 @@ const Content = styled.div.attrs({
       font-size: 16px;
     }
   }
+  @media only screen and (max-width: 640px) {
+    padding: 36px 48px;
+
+    .title {
+      font-size: 36px;
+      margin-bottom: 36px;
+    }
+  }
 `;
 
 const Home = () => {
@@ -92,8 +110,8 @@ const Home = () => {
             <div className="text-white text-92 font-bold title">Quadpay anywhere</div>
             <div className="text-white text-2xl mt-6 subtitle">Shop your favorite brands with the Quadpay app—online or in-store.</div>
           </div>
-          <div className="flex mt-8 buttons">
-            <Button type="misc" className="mr-3" icon="apple" caption="Get on the App Store" />
+          <div className="flex mt-8 buttons sm:flex-wrap">
+            <Button type="misc" className="mr-3 sm:mb-4" icon="apple" caption="Get on the App Store" />
             <Button type="misc" icon="google" caption="Get on Google Play" />
           </div>
         </div>
@@ -102,7 +120,7 @@ const Home = () => {
         <div className="text-64 leading-tiny font-bold title">Partnering with Quadpay</div>
         <div className="flex w-full -mx-4 flex-wrap">
           {ITEMS.map((item) => (
-            <div key={item.id} className="w-1/3 p-4 flex flex-col">
+            <div key={item.id} className="w-1/3 sm:w-full p-4 flex flex-col">
               <div>
                 <Icon name={item.icon} />
               </div>
